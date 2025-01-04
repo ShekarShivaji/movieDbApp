@@ -1,0 +1,54 @@
+.FooterBgContainer {
+  width: 100vw;
+  position: fixed;
+  bottom: 0cm;
+  background-color: #4241416a;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .FooterBgContainer {
+    display: none;
+  }
+}
+
+.NavigationContainerInMobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60px;
+  width: 80px;
+}
+
+.profileInMobileView {
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all;
+  width: 30px;
+  margin-bottom: -5px;
+}
+
+.navItemsInMobileView {
+  text-decoration: none;
+  color: #fafafa;
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.lable {
+  margin-top: 0px;
+}

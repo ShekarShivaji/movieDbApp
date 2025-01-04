@@ -1,0 +1,43 @@
+.bg-conatainer {
+  background-color: #252424;
+  min-width: 100%;
+  max-width: 95vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.bg-popularContainer {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .bg-popularContainer {
+    margin-top: 200px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .bg-popularContainer {
+    margin-top: 360px;
+  }
+}
+
+.movie__list {
+  padding-top: 50px;
+}
+
+.list__title {
+  font-size: 1.75rem;
+  margin: 2.5rem;
+  color: #ffffff;
+}
+
+.list__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

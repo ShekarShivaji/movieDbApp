@@ -1,0 +1,146 @@
+.Bg-header-container {
+  width: 100vw;
+  height: 80px;
+  background-color: #424141a3;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 40;
+  margin-top: 0px;
+}
+
+@media screen and (max-width: 576px) {
+  .Bg-header-container {
+    padding-left: 10px;
+    height: 50px;
+  }
+}
+
+.headerHeading {
+  font-size: 25px;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 576px) {
+  .movieLogo {
+    font-size: 15px;
+  }
+}
+
+.navItemsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navigation-keys {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 400px;
+  justify-content: space-around;
+}
+@media screen and (max-width: 767px) {
+  .navigation-keys {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .navigation-keys {
+    min-width: 300px;
+  }
+}
+
+.navItems {
+  text-decoration: none;
+  color: #fafafa;
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+
+.navSearchAndProfile {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding-right: 30px;
+}
+
+@media screen and (max-width: 576px) {
+  .navSearchAndProfile {
+    padding-right: 10px;
+    width: 100%;
+  }
+}
+
+.profile {
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all;
+  width: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  .profile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .profile {
+    width: 25px;
+  }
+}
+
+.navigationButtons {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 576px) {
+  .search-container {
+    min-width: 80px;
+    margin-right: -2px;
+  }
+}
+
+.search {
+  background-color: transparent;
+  color: #ffffff;
+  width: 150px;
+  min-height: 50px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 576px) {
+  .search {
+    font-size: 12px;
+    min-width: 50px;
+  }
+}
+
+.searchbutton {
+  background-color: transparent;
+  border-color: #ffffff;
+  padding: 6px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  color: #ffffff;
+}

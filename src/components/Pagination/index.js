@@ -47,7 +47,7 @@ class Pagination extends Component {
           onClick={this.onPreviouspage}
           className="paginationButton"
         >
-          Previous
+          Prev
         </button>
         <p className="page-numbers">{pageNo}</p>
         <button

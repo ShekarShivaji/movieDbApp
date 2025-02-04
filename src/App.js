@@ -1,7 +1,7 @@
 import './App.css'
 import {useState} from 'react'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import HomeRoute from './components/HomeRoute'
+import Popular from './components/Popular'
 import SingleMovieDetails from './components/SingleMovieDetails'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -58,11 +58,11 @@ const App = () => {
         apiStatus,
       }}
     >
-      <div>
+      <>
         <BrowserRouter>
           <Header />
           <Switch>
-            <Route exact path="/" component={HomeRoute} />
+            <Route exact path="/" component={Popular} />
             <Route exact path="/top-rated" component={TopRated} />
             <Route exact path="/upcoming" component={Upcoming} />
             <Route exact path="/search" component={SearchResult} />
@@ -70,7 +70,7 @@ const App = () => {
           </Switch>
           <Footer />
         </BrowserRouter>
-      </div>
+      </>
     </SearchMoviesContext.Provider>
   )
 }

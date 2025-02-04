@@ -7,8 +7,8 @@ const Header = props => {
     <SearchMoviesContext.Consumer>
       {value => {
         const {
-          onTrrigerSearchingQuery,
           onChangeSearchInput,
+          onTrrigerSearchingQuery,
           searchInput,
         } = value
 

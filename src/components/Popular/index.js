@@ -4,20 +4,19 @@ import BannerSection from '../BannerSection/index'
 import Card from '../Card/index'
 import Pagination from '../Pagination/index'
 
-class HomeRoute extends Component {
+class Popular extends Component {
   state = {
     moviesData: [],
     totalPages: 0,
   }
 
   componentDidMount() {
-    this.getMovies()
+    this.getPopularMovies()
   }
 
-  getMovies = async (page = 1) => {
-    const data = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=da572fda53f46907063705b7b38f9918&language=en-US&page=${page}`,
-    )
+  getPopularMovies = async (page = 1) => {
+    const getPopularMoviesURL = `https://api.themoviedb.org/3/movie/popular?api_key=da572fda53f46907063705b7b38f9918&language=en-US&page=${page}`
+    const data = await fetch(getPopularMoviesURL)
     const jsondata = await data.json()
     const moviesdata = jsondata.results.map(each => ({
       adult: each.adult,
@@ -56,10 +55,13 @@ class HomeRoute extends Component {
             </div>
           </div>
         </div>
-        <Pagination totalPages={totalPages} apiCallback={this.getMovies} />
+        <Pagination
+          totalPages={totalPages}
+          apiCallback={this.getPopularMovies}
+        />
       </div>
     )
   }
 }
 
-export default HomeRoute
+export default Popular

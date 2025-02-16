@@ -3,7 +3,6 @@ import {useState} from 'react'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Popular from './components/Popular'
 import SingleMovieDetails from './components/SingleMovieDetails'
-import Header from './components/Header'
 import Footer from './components/Footer'
 import TopRated from './components/TopRated'
 import Upcoming from './components/Upcoming'
@@ -30,7 +29,7 @@ const App = () => {
       originalTitle: each.original_title,
       overview: each.overview,
       popularity: each.popularity,
-      posterPath: `https://image.tmdb.org/t/p/w500${each.poster_path}`,
+      posterPath: `https://image.tmdb.org/t/p/w300${each.poster_path}`,
       releaseDate: each.release_date,
       title: each.title,
       video: each.video,
@@ -60,7 +59,6 @@ const App = () => {
     >
       <>
         <BrowserRouter>
-          <Header />
           <Switch>
             <Route exact path="/" component={Popular} />
             <Route exact path="/top-rated" component={TopRated} />

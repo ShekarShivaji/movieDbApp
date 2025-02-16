@@ -3,6 +3,7 @@ import Loader from 'react-loader-spinner'
 import Card from '../Card/index'
 import SearchMoviesContext from '../../context/SearchMoviesContext'
 import Pagination from '../Pagination/index'
+import Header from '../Header/index'
 
 const SearchResult = () => {
   const renderEmptyView = () => (
@@ -51,6 +52,7 @@ const SearchResult = () => {
 
         return (
           <>
+            <Header />
             <div className="movie__list">
               <div className="list__cards">
                 {renderSearchResultsView(value)}

@@ -1,12 +1,15 @@
 import {Component} from 'react'
 import './index.css'
+import Loader from 'react-loader-spinner'
 import Card from '../Card/index'
 import Pagination from '../Pagination/index'
+import Header from '../Header/index'
 
 class TopRated extends Component {
   state = {
     movieList: [],
     totalPages: 0,
+    isLoading: true,
   }
 
   componentDidMount() {
@@ -35,22 +38,39 @@ class TopRated extends Component {
       voteCount: each.vote_count,
     }))
 
-    this.setState({movieList: convertData, totalPages: data.total_pages})
+    this.setState({
+      movieList: convertData,
+      isLoading: false,
+      totalPages: data.total_pages,
+    })
   }
 
+  renderLoadingView = () => (
+    <div className="loader-container">
+      <Loader type="TailSpin" color="#032541" />
+    </div>
+  )
+
   render() {
-    const {movieList, totalPages} = this.state
+    const {movieList, isLoading, totalPages} = this.state
     return (
       <>
-        <div className="movie__list">
-          <h2 className="list__title">Top Rated</h2>
-          <div className="list__cards">
-            {movieList.map(movie => (
-              <Card movie={movie} key={movie.id} />
-            ))}
-          </div>
-        </div>
-        <Pagination totalPages={totalPages} apiCallback={this.getData} />
+        {isLoading ? (
+          this.renderLoadingView()
+        ) : (
+          <>
+            <Header />
+            <div className="movie__list">
+              <h2 className="list__title">Top Rated</h2>
+              <div className="list__cards">
+                {movieList.map(movie => (
+                  <Card movie={movie} key={movie.id} />
+                ))}
+              </div>
+            </div>
+            <Pagination totalPages={totalPages} apiCallback={this.getData} />
+          </>
+        )}
       </>
     )
   }

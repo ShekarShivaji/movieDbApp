@@ -27,9 +27,9 @@ const Card = ({movie}) => {
         <div className="cardContainer">
           <div className="cards">
             <img
-              alt={movie.originalTitle}
+              alt={movie.title}
               className="cards__img"
-              src={`https://image.tmdb.org/t/p/original${
+              src={`https://image.tmdb.org/t/p/w300${
                 movie ? movie.posterPath : ''
               }`}
             />

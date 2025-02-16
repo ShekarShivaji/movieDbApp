@@ -14,6 +14,14 @@
   min-height: 100%;
 }
 
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 @media screen and (min-width: 768px) {
   .bg-popularContainer {
     margin-top: 200px;

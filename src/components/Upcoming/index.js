@@ -68,9 +68,9 @@ class Upcoming extends Component {
                 ))}
               </div>
             </div>
-            <Pagination totalPages={totalPages} apiCallback={this.getData} />
           </>
         )}
+        <Pagination totalPages={totalPages} apiCallback={this.getData} />
       </>
     )
   }

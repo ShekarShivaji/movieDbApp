@@ -74,13 +74,13 @@ class Popular extends Component {
                   </div>
                 </div>
               </div>
-              <Pagination
-                totalPages={totalPages}
-                apiCallback={this.getPopularMovies}
-              />
             </div>
           </>
         )}
+        <Pagination
+          totalPages={totalPages}
+          apiCallback={this.getPopularMovies}
+        />
       </>
     )
   }

@@ -7,7 +7,7 @@ import Header from '../Header/index'
 
 class Upcoming extends Component {
   state = {
-    movieList: [],
+    movieList: {},
     totalPages: 0,
     isLoading: true,
   }
@@ -60,14 +60,14 @@ class Upcoming extends Component {
         ) : (
           <>
             <Header />
-            <div className="movie__list">
+            <ul className="movie__list">
               <h2 className="list__title">Upcoming</h2>
               <div className="list__cards">
                 {movieList.map(movie => (
                   <Card movie={movie} key={movie.id} />
                 ))}
               </div>
-            </div>
+            </ul>
           </>
         )}
         <Pagination totalPages={totalPages} apiCallback={this.getData} />

@@ -29,7 +29,7 @@ const App = () => {
       originalTitle: each.original_title,
       overview: each.overview,
       popularity: each.popularity,
-      posterPath: `https://image.tmdb.org/t/p/w300${each.poster_path}`,
+      posterPath: `https://image.tmdb.org/t/p/w500${each.poster_path}`,
       releaseDate: each.release_date,
       title: each.title,
       video: each.video,
@@ -57,7 +57,7 @@ const App = () => {
         apiStatus,
       }}
     >
-      <>
+      <div>
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={Popular} />
@@ -68,7 +68,7 @@ const App = () => {
           </Switch>
           <Footer />
         </BrowserRouter>
-      </>
+      </div>
     </SearchMoviesContext.Provider>
   )
 }

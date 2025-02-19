@@ -6,7 +6,8 @@ import Skeleton, {SkeletonTheme} from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import {Link} from 'react-router-dom'
 
-const Card = ({movie}) => {
+const Card = props => {
+  const {movie} = props
   const [isLoading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -24,7 +25,7 @@ const Card = ({movie}) => {
           </SkeletonTheme>
         </div>
       ) : (
-        <div className="cardContainer">
+        <li className="cardContainer">
           <div className="cards">
             <img
               alt={movie.title}
@@ -34,9 +35,7 @@ const Card = ({movie}) => {
               }`}
             />
             <div className="cards__overlay">
-              <div className="card__title">
-                {movie ? movie.originalTitle : ''}
-              </div>
+              <div className="card__title">{movie ? movie.title : ''}</div>
               <div className="card__runtime">
                 {movie ? movie.releaseDate : ''}
                 <span className="card__rating">
@@ -58,7 +57,7 @@ const Card = ({movie}) => {
               </Link>
             </div>
           </div>
-        </div>
+        </li>
       )}
     </>
   )

@@ -8,7 +8,7 @@ import Header from '../Header/index'
 
 class Popular extends Component {
   state = {
-    moviesData: [],
+    moviesData: {},
     totalPages: 0,
     isLoading: true,
   }
@@ -54,11 +54,11 @@ class Popular extends Component {
     const {moviesData, isLoading, totalPages} = this.state
     return (
       <>
+        <Header />
         {isLoading ? (
           this.renderLoadingView()
         ) : (
           <>
-            <Header />
             <div className="bg-conatainer">
               <div>
                 <BannerSection moviesData={moviesData} />
@@ -67,11 +67,11 @@ class Popular extends Component {
               <div className="bg-popularContainer">
                 <div className="movie__list">
                   <h2 className="list__title">Popular</h2>
-                  <div className="list__cards">
+                  <ul className="list__cards">
                     {moviesData.map(movie => (
                       <Card movie={movie} key={movie.id} />
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </div>
             </div>
